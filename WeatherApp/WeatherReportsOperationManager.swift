@@ -11,8 +11,8 @@ import UIKit
 class WeatherReportsOperationManager: NSObject {
     
     //MARK: Properties
+    
     var weather: Weather?
-    var weatherReportFetchedSuccessfully = true
     var weathers = [Weather]()
 
     static let sharedInstance = WeatherReportsOperationManager()
@@ -48,6 +48,7 @@ class WeatherReportsOperationManager: NSObject {
             }.resume()
         }
     }
+    
     func loadSerchedWeathers() {
         if let serchedWeathers = loadWeathers() {
             self.weathers = serchedWeathers
@@ -102,17 +103,16 @@ class WeatherReportsOperationManager: NSObject {
     private func populateWeatherWith(json: [String: Any]) {
         if let cityName = json["cityName"] as? String {
             weather = Weather.init(cityName: cityName, iconURL: json["iconImageURLString"] as? String, temperature: json["temperature"] as? Int, weatherCondition: json["weatherCondition"] as? String,windSpeedAndDirection: json["windSpeedAndDirection"]  as? String)
-            weatherReportFetchedSuccessfully = true
-            addCityToSave()
-            saveCities()
+            addWeatherToSave()
+            saveWeathers()
         }
         
     }
-    private func saveCities() {
+    private func saveWeathers() {
         NSKeyedArchiver.archiveRootObject(weathers, toFile: Weather.ArchiveURL.path)
     }
     
-    private func addCityToSave() {
+    private func addWeatherToSave() {
         var cityFound = false
         if let currentWeather = weather {
             for weather in weathers {
