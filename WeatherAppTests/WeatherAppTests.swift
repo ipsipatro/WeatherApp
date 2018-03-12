@@ -13,10 +13,10 @@ class WeatherAppTests: XCTestCase {
     
     func testRatingInitialisationSuccess() {
         
-        let noCityNameWeather = Weather.init(cityName: "", iconURL: nil, temperature: 10, weatherCondition: "test", windSpeedAndDirection: "S")
+        let noCityNameWeather = Weather.init(cityName: "", iconURL: nil, temperature: 10, weatherCondition: "rain", windSpeedAndDirection: "S")
         XCTAssertNil(noCityNameWeather)
         
-        let validCityNameWeather = Weather.init(cityName: "Bournemouth", iconURL: nil, temperature: 10, weatherCondition: "test", windSpeedAndDirection: "S")
+        let validCityNameWeather = Weather.init(cityName: "Bournemouth", iconURL: nil, temperature: 10, weatherCondition: nil, windSpeedAndDirection: nil)
         XCTAssertNotNil(validCityNameWeather)
         
     }
