@@ -26,13 +26,16 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     
 @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-@IBOutlet var viewModle: WeatherReportsOperationManager!
+    @IBOutlet weak var imageLoadingIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet var viewModle: WeatherReportsOperationManager!
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
     super.viewDidLoad()
         searchBar.delegate = self
         activityIndicator.hidesWhenStopped = true
+        imageLoadingIndicator.hidesWhenStopped = true
         setHiddenPropertiesForViewsAs(true)
     }
     
@@ -74,22 +77,34 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
                     self.temperatureLabel.text = tempDesc+"℃"
                 }
                 self.weatherConditionLabel.text = weather.weatherCondition
-                
-                if let iconURL = weather.iconImageURL {
-                    if let url = URL(string: iconURL) {
-                        let data = try? Data(contentsOf: url)
-                        if let data = data {
-                            self.iconImageView.image = UIImage(data: data)
-                        }
-                    }
-                }
-                
                 if weather.windSpeedAndDirection != nil {
                     self.windSpeedAndDirectionLabel.text = weather.windSpeedAndDirection
                     self.windLabel.text = "Wind"
                 }
+                self.loadIconImageFrom(weather: weather)
             }else {
                 self.cityNameLabel.text = "City not found"
+            }
+        }
+    }
+    
+    private func loadIconImageFrom(weather:Weather) {
+        if let iconURL = weather.iconImageURL {
+            self.imageLoadingIndicator.startAnimating()
+            self.iconImageView.isHidden = true
+            DispatchQueue.global(qos: .userInitiated).async {
+                if let url = URL(string: iconURL) {
+                    let data = try? Data(contentsOf: url)
+                    if let data = data {
+                        DispatchQueue.main.async {
+                             self.iconImageView.isHidden = false
+                            self.imageLoadingIndicator.stopAnimating()
+                            self.iconImageView.image = UIImage(data: data)
+                            
+                        }
+                    }
+                }
+                
             }
         }
     }

@@ -99,6 +99,9 @@
                                     <constraint firstAttribute="height" constant="40" id="cCl-t4-ur5"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WvA-z7-Fc5">
+                                <rect key="frame" x="249" y="236" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -116,6 +119,7 @@
                             <constraint firstItem="MNp-CG-8en" firstAttribute="leading" secondItem="iVv-iL-1mf" secondAttribute="trailing" constant="8" id="Zh3-Bg-qLf"/>
                             <constraint firstItem="xEf-PE-wip" firstAttribute="top" secondItem="Jwd-fo-9ob" secondAttribute="bottom" id="aC8-Ff-hMA"/>
                             <constraint firstItem="iVv-iL-1mf" firstAttribute="top" secondItem="MNL-xU-8tH" secondAttribute="bottom" constant="8" id="aDi-qh-fHO"/>
+                            <constraint firstItem="WvA-z7-Fc5" firstAttribute="centerX" secondItem="MNp-CG-8en" secondAttribute="centerX" id="afC-NN-KyK"/>
                             <constraint firstItem="iVv-iL-1mf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fkM-39-x86"/>
                             <constraint firstItem="MNp-CG-8en" firstAttribute="centerY" secondItem="iVv-iL-1mf" secondAttribute="centerY" id="fov-pQ-Lpx"/>
                             <constraint firstItem="KIY-0a-XGx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gQW-V6-yly"/>
@@ -124,6 +128,7 @@
                             <constraint firstAttribute="trailing" secondItem="xEf-PE-wip" secondAttribute="trailing" id="lze-Vj-Hhf"/>
                             <constraint firstItem="z1D-Ho-Df7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n2R-bb-2Ru"/>
                             <constraint firstItem="9Qi-kc-PAk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="ng5-oy-fpu"/>
+                            <constraint firstItem="WvA-z7-Fc5" firstAttribute="centerY" secondItem="MNp-CG-8en" secondAttribute="centerY" id="sBB-0o-U6X"/>
                             <constraint firstItem="1it-pw-H8N" firstAttribute="top" secondItem="9Qi-kc-PAk" secondAttribute="bottom" constant="20" id="tJF-w0-lZp"/>
                             <constraint firstAttribute="trailing" secondItem="KIY-0a-XGx" secondAttribute="trailing" id="vpK-UF-dmp"/>
                             <constraint firstItem="MNL-xU-8tH" firstAttribute="top" secondItem="HsE-IQ-m3H" secondAttribute="bottom" constant="8" id="wxJ-tN-PqW"/>
@@ -137,6 +142,7 @@
                         <outlet property="activityIndicator" destination="xXH-iB-bT9" id="clS-yx-ptz"/>
                         <outlet property="cityNameLabel" destination="HsE-IQ-m3H" id="b2y-fM-anz"/>
                         <outlet property="iconImageView" destination="MNp-CG-8en" id="9JT-FO-TDj"/>
+                        <outlet property="imageLoadingIndicator" destination="WvA-z7-Fc5" id="nzp-if-2JD"/>
                         <outlet property="searchBar" destination="xEf-PE-wip" id="Mct-Ce-bnQ"/>
                         <outlet property="temperatureLabel" destination="iVv-iL-1mf" id="KQb-tI-j0B"/>
                         <outlet property="viewModle" destination="onN-wy-hPR" id="91J-C1-yA1"/>
