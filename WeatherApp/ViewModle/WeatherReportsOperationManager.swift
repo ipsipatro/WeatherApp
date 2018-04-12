@@ -16,9 +16,6 @@ class WeatherReportsOperationManager: NSObject {
     var weathers = [Weather]()
     let imageCache = NSCache<NSString, UIImage>()
 
-    static let sharedInstance = WeatherReportsOperationManager()
-    fileprivate override init() {}
-    
     // MARK: - Public
     
     func getWeatherReportForCity(city:String, completion: @escaping () -> () = {}) {

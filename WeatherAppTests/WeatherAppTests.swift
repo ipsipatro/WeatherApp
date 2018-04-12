@@ -11,7 +11,7 @@ import XCTest
 
 class WeatherAppTests: XCTestCase {
     
-    func testRatingInitialisationSuccess() {
+    func testCityInitialisationSuccess() {
         
         let noCityNameWeather = Weather.init(cityName: "", iconURL: nil, temperature: 10, weatherCondition: "rain", windSpeedAndDirection: "S")
         XCTAssertNil(noCityNameWeather)

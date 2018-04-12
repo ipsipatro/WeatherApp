@@ -139,12 +139,14 @@
                         <outlet property="iconImageView" destination="MNp-CG-8en" id="9JT-FO-TDj"/>
                         <outlet property="searchBar" destination="xEf-PE-wip" id="Mct-Ce-bnQ"/>
                         <outlet property="temperatureLabel" destination="iVv-iL-1mf" id="KQb-tI-j0B"/>
+                        <outlet property="viewModle" destination="onN-wy-hPR" id="91J-C1-yA1"/>
                         <outlet property="weatherConditionLabel" destination="MNL-xU-8tH" id="Pur-NQ-Fa1"/>
                         <outlet property="windLabel" destination="ldW-8j-373" id="r9X-qw-026"/>
                         <outlet property="windSpeedAndDirectionLabel" destination="KRz-Dj-G5s" id="dmb-c1-69r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="onN-wy-hPR" customClass="WeatherReportsOperationManager" customModule="WeatherApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="575" y="125"/>
         </scene>
@@ -162,8 +164,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x7M-tb-rke">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityTableViewCell" textLabel="V8t-X6-Me6" rowHeight="60" style="IBUITableViewCellStyleDefault" id="VIc-xe-2xv" customClass="FavouriteCitiesTableViewCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
@@ -181,7 +184,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.90376674107142863" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="V8t-X6-Me6" id="eAL-vd-yfw"/>
                                             <segue destination="eFx-1k-jUF" kind="unwind" unwindAction="unwindSegueFromCityListController:" id="tVZ-6D-oXX"/>

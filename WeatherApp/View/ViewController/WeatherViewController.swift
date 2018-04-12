@@ -26,6 +26,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     
 @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+@IBOutlet var viewModle: WeatherReportsOperationManager!
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -37,7 +38,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        WeatherReportsOperationManager.sharedInstance.loadSerchedWeathers()
+        viewModle.loadSerchedWeathers()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -59,7 +60,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     // MARK: - private methods
     
     private func fetchWeatherReportFor(city: String) {
-        WeatherReportsOperationManager.sharedInstance.getWeatherReportForCity(city:"\(city.replacingOccurrences(of: " ", with: "%20"))", completion: {self.updateView()})
+        viewModle.getWeatherReportForCity(city:"\(city.replacingOccurrences(of: " ", with: "%20"))", completion: {self.updateView()})
     }
     
     private func updateView() {
@@ -67,7 +68,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
             self.activityIndicator.stopAnimating()
             self.setHiddenPropertiesForViews()
             self.cityNameLabel.isHidden = false
-            if let weather = WeatherReportsOperationManager.sharedInstance.weather {
+            if let weather = self.viewModle.weather {
                 self.cityNameLabel.text = weather.cityName
                 if let tempDesc = weather.temperature?.description {
                     self.temperatureLabel.text = tempDesc+"℃"
@@ -95,7 +96,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     
     private func setHiddenPropertiesForViews() {
          var noResultsFound = true
-        if let _ = WeatherReportsOperationManager.sharedInstance.weather {
+        if let _ = viewModle.weather {
             noResultsFound = false
         }
         setHiddenPropertiesForViewsAs(noResultsFound)

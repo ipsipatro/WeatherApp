@@ -19,6 +19,7 @@
 		17AD2B742055619700095015 /* FavouriteCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AD2B732055619700095015 /* FavouriteCitiesViewController.swift */; };
 		17AD2B76205561E200095015 /* FavouriteCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AD2B75205561E200095015 /* FavouriteCitiesTableViewCell.swift */; };
 		17AD2B782055637F00095015 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AD2B772055637F00095015 /* WeatherDataManager.swift */; };
+		17CCBF2D207F8C4A005F407A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CCBF2C207F8C4A005F407A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		17AD2B732055619700095015 /* FavouriteCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesViewController.swift; sourceTree = "<group>"; };
 		17AD2B75205561E200095015 /* FavouriteCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		17AD2B772055637F00095015 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
+		17CCBF2C207F8C4A005F407A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,16 +109,14 @@
 		177CEFD7205413B6008F9F29 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				17CCBF2A207F89A6005F407A /* ViewModle */,
+				17CCBF29207F898B005F407A /* Modle */,
+				17CCBF27207F8935005F407A /* View */,
 				177CEFD8205413B6008F9F29 /* AppDelegate.swift */,
-				177CF00820543CFB008F9F29 /* Weather.swift */,
-				17AD2B772055637F00095015 /* WeatherDataManager.swift */,
-				17AD2B6F2055220A00095015 /* WeatherReportsOperationManager.swift */,
-				177CF00620543AF8008F9F29 /* WeatherViewController.swift */,
-				17AD2B732055619700095015 /* FavouriteCitiesViewController.swift */,
-				17AD2B75205561E200095015 /* FavouriteCitiesTableViewCell.swift */,
 				177CEFE4205413B6008F9F29 /* Info.plist */,
 				177CEFE1205413B6008F9F29 /* LaunchScreen.storyboard */,
 				177CEFDF205413B6008F9F29 /* Assets.xcassets */,
+				17CCBF2B207F8C4A005F407A /* icon */,
 				177CEFDC205413B6008F9F29 /* Main.storyboard */,
 			);
 			path = WeatherApp;
@@ -138,6 +138,49 @@
 				177CEFFA205413B6008F9F29 /* Info.plist */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		17CCBF27207F8935005F407A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17CCBF28207F894E005F407A /* ViewController */,
+				17AD2B75205561E200095015 /* FavouriteCitiesTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17CCBF28207F894E005F407A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				177CF00620543AF8008F9F29 /* WeatherViewController.swift */,
+				17AD2B732055619700095015 /* FavouriteCitiesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		17CCBF29207F898B005F407A /* Modle */ = {
+			isa = PBXGroup;
+			children = (
+				177CF00820543CFB008F9F29 /* Weather.swift */,
+			);
+			path = Modle;
+			sourceTree = "<group>";
+		};
+		17CCBF2A207F89A6005F407A /* ViewModle */ = {
+			isa = PBXGroup;
+			children = (
+				17AD2B772055637F00095015 /* WeatherDataManager.swift */,
+				17AD2B6F2055220A00095015 /* WeatherReportsOperationManager.swift */,
+			);
+			path = ViewModle;
+			sourceTree = "<group>";
+		};
+		17CCBF2B207F8C4A005F407A /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				17CCBF2C207F8C4A005F407A /* Assets.xcassets */,
+			);
+			path = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +292,7 @@
 			files = (
 				177CEFE3205413B6008F9F29 /* LaunchScreen.storyboard in Resources */,
 				177CEFE0205413B6008F9F29 /* Assets.xcassets in Resources */,
+				17CCBF2D207F8C4A005F407A /* Assets.xcassets in Resources */,
 				177CEFDE205413B6008F9F29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
