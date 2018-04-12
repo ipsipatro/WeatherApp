@@ -14,6 +14,7 @@ class WeatherReportsOperationManager: NSObject {
     
     var weather: Weather?
     var weathers = [Weather]()
+    let imageCache = NSCache<NSString, UIImage>()
 
     static let sharedInstance = WeatherReportsOperationManager()
     fileprivate override init() {}

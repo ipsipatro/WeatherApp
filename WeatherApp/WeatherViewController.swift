@@ -49,6 +49,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
+            searchBar.resignFirstResponder()
             activityIndicator.startAnimating()
             fetchWeatherReportFor(city: text)
         }
